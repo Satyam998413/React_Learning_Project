@@ -3,7 +3,7 @@ import React,{useState} from 'react'
 export default function AboutUs() {
   const [myStyle,setmyStyle]=useState({
     color:'white',
-    backgroundColor:'black',
+    backgroundColor:'grey',
     border:'1px solid white',
   });
   const [btnText,setBtnText]=useState('Enable Light Mode');
@@ -20,7 +20,7 @@ export default function AboutUs() {
     else{
       setmyStyle({
         color:'white',
-        backgroundColor:'black',
+        backgroundColor:'grey',
         border:'1px solid white',
       });
       setBtnText('Enable Light Mode');
