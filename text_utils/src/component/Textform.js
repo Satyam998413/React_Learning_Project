@@ -6,28 +6,33 @@ export default function Textform(props) {
        
         let newtext=text.toUpperCase();
         setText(newtext);
+        props.showAlert("Convertd to UpperCase","success");
     };
     const handleLowClick=()=>{
         
         let newtext=text.toLowerCase();
         setText(newtext);
+        props.showAlert("Convertd to LowerCase","success");
     };
     const handleClearClick=()=>{
         
         let newtext='';
         setText(newtext);
+        props.showAlert("Empty Your's TextArea","success");
     };
     const handleCopyClick=()=>{
       let newtext=document.getElementById('mybox');
       newtext.select();
       
       navigator.clipboard.writeText(newtext.value);
+      props.showAlert("Copied Text","success");
 
   };
   const handleExtraSpaceRemoveClick=()=>{
         
     let newtext=text.split(/[ ]+/);
     setText(newtext.join(' '));
+    props.showAlert("Removed Extra Spacess","success");
     
 };
     const handleOnChange=(event)=>{
@@ -39,9 +44,9 @@ export default function Textform(props) {
   return (
     <>
   <div className="container">
-<div className=" mb-3 m-3 w-75">
+<div className=" mb-3 m-3 w-75" >
   <h4>{props.heading}</h4>
-  <textarea placeholder="Enter Your's Text Here........." className="form-control" id="mybox" rows="10" onChange={handleOnChange} value={text}></textarea>
+  <textarea  placeholder="Enter Your's Text Here........." className="form-control" id="mybox" rows="10" onChange={handleOnChange} value={text}></textarea>
 </div>
 <button className="btn btn-primary mb-3 m-3" onClick={handleUpClick}>Conver to UpperCase </button>
 <button className="btn btn-primary mb-3 m-3" onClick={handleLowClick}>Conver to LowerCase </button>
