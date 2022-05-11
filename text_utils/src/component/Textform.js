@@ -44,9 +44,9 @@ export default function Textform(props) {
   return (
     <>
   <div className="container">
-<div className=" mb-3 m-3 w-75" >
+<div className=" mb-3 m-3 w-75 ">
   <h4>{props.heading}</h4>
-  <textarea  placeholder="Enter Your's Text Here........." className="form-control" id="mybox" rows="10" onChange={handleOnChange} value={text}></textarea>
+  <textarea placeholder="Enter Your's Text Here........." className="form-control" id="mybox" rows="10" onChange={handleOnChange} value={text}></textarea>
 </div>
 <button className="btn btn-primary mb-3 m-3" onClick={handleUpClick}>Conver to UpperCase </button>
 <button className="btn btn-primary mb-3 m-3" onClick={handleLowClick}>Conver to LowerCase </button>
