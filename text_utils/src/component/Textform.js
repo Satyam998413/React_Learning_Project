@@ -57,8 +57,8 @@ export default function Textform(props) {
 </div>
 <div className="container">
     <h4>Your's Text Summary...</h4>
-    <p>Number of Words:<b>{text.split(" ").filter((element)=>{return element.length!==0}).length}</b> And Number of Character <b> {text.length}</b> words</p>
-    <p>Time To Taking Reading Wors:<b>{0.008* text.split(" ").filter((element)=>{return element.length!==0}).length}</b></p>
+    <p>Number of Words:<b>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length}</b> And Number of Character <b> {text.length}</b> words</p>
+    <p>Time To Taking Reading Wors:<b>{0.008* text.split(/\s+/).filter((element)=>{return element.length!==0}).length}</b></p>
     <h5>Preview</h5>
     <p>{text}:Nothing to Preview</p>
 </div>

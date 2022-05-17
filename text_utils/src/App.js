@@ -20,8 +20,18 @@ function App() {
    }, 1500);
  }
  
+const removebodyclasses=()=>{
+  document.body.classList.remove('bg-primary');
+  document.body.classList.remove('bg-success');
+  document.body.classList.remove('bg-info');
+  document.body.classList.remove('bg-warning');
+  document.body.classList.remove('bg-danger');
 
+}
   const toggleMode=(cls)=>{
+    
+    removebodyclasses();
+    document.body.classList.add('bg-'+cls);
     if(mode==="light"){
       setMode("dark");
       document.body.style.background="rgb(9, 168, 9)";
