@@ -5,6 +5,8 @@ import Navbar from './component/Navbar';
 import Textform from './component/Textform';
 import About from './component/About';
 import Alert from './component/Alert';
+// import ReactDOM from "react-dom/client";
+// import { BrowserRouter, Routes, Route,Switch,Link } from "react-router-dom";
 
 
 function App() {
@@ -22,7 +24,7 @@ function App() {
   const toggleMode=()=>{
     if(mode==="light"){
       setMode("dark");
-      document.body.style.background="grey";
+      document.body.style.background="rgb(9, 168, 9)";
       showAlert("Dark Mode is Enabled","success");
       document.title="TextUtils:Dark Mode";
     }
@@ -34,13 +36,24 @@ function App() {
     }
   }
   return (
+    
     <> 
       <Navbar title="TextUtils" abouttext="About Us" mode={mode} toggleMode={toggleMode}/>
         <Alert alert={alert}/>
       <div className="container">
         <Textform showAlert={showAlert} mode={mode} heading="Enter Your's Texts Here to analyze below"/> 
-        <About />
+        <About  mode={mode}/>
       </div>
+      {/* <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter> */}
     </>
   );
 }
